@@ -9,6 +9,7 @@ html, body {
     height: 100%;
     /*margin: 0 auto;*/
 }
+
 header {
     display: flex;
     justify-content: center;
@@ -28,8 +29,6 @@ main {
     height: 60%;
 }
 
-
-
 .loginblock__form {
     /*margin: 0 auto;*/
     width: 310px;
@@ -41,8 +40,6 @@ main {
     font-family: "Open Sans Condensed";
     font-size: 1em;
 }
-
-
 
 .form__inputname {
     display: block;
@@ -81,12 +78,13 @@ main {
 .form_submit:active, .form_submit:focus {
     outline: none !important;
 }
+
 .form_submit:hover {
     background-color: #F0E68C;
 }
 
 .form__footertext {
-    display:flex;
+    display: flex;
     justify-content: end;
     margin-top: 100px;
 }
