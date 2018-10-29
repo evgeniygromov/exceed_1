@@ -3,8 +3,6 @@
 const arr = [];
 const div = document.getElementById("block");
 
-
-
 function todoadd (event) {
     event.preventDefault();
     let text = document.getElementById("input").value;
@@ -19,22 +17,15 @@ function todoadd (event) {
     if ((text !== "")&&(text.length>4)) {
      todoPush();
     }
-
-
 }
-
-
 
 document.getElementById("submit").addEventListener("click", todoadd);
-window.addEventListener("keydown", (e)=> {
-    let code = (window.event) ? window.event.keyCode : e.which;
-if (event.keyCode == 13){
-    todoadd();
+
+
+function test(e){
+    code = (window.event) ? window.event.keyCode : e.which;
+    if(code === 13){
+        alert('Enter нажат! ');
+        todoadd ();
+    }
 }
-});
-//
-// .keyup(function(event){
-//     if(event.keyCode == 13){
-//         event.preventDefault();
-//
-//     }
