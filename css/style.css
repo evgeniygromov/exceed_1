@@ -52,7 +52,7 @@ main {
     padding: 5px;
 }
 
-.form_inputpassword {
+.form__inputpassword {
     display: block;
     margin-top: -10px;
     height: 25px;
@@ -63,7 +63,7 @@ main {
     padding: 5px;
 }
 
-.form_submit {
+.form__submit {
     display: block;
     margin-top: 20px;
     height: 35px;
@@ -75,11 +75,11 @@ main {
     border-radius: 3px;
 }
 
-.form_submit:active, .form_submit:focus {
+.form__submit:active, .form_submit:focus {
     outline: none !important;
 }
 
-.form_submit:hover {
+.form__submit:hover {
     background-color: #F0E68C;
 }
 
