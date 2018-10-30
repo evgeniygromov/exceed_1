@@ -1,95 +1,75 @@
 "use script";
 
-const arr = [];
+// const arr = [];
 const input = document.getElementById('input');
-const block = document.getElementById('block');
+const taskContainer = document.getElementById('taskcontainer');
 
 function todoAdd() {
-    let text = input.value;
+    let inputText = input.value;
 
     function todoPush() {
-        arr.push(text);
+        // arr.push(inputText);
         const todoListBlock = document.createElement('div');
         todoListBlock.className = 'todoListBlock';
 
-//checked task
-        // todoListBlock.addEventListener('click', () => {
-        //     todoListBlock.className = 'todoListBlockChecked';
-        // })
+        // checked task
+        //         todoListBlock.addEventListener('click', () => {
+        //             todoListBlock.className = 'todoListBlockChecked';
+        //             todoListDone.style.textDecoration='none';
+        //         })
 
+//render delete icon
         let iconDelete = document.createElement('i');
         iconDelete.className = 'fas fa-trash';
-        this.block.appendChild(iconDelete);
+        taskContainer.appendChild(iconDelete);
 
-        let iconChecked = document.createElement('i');
-        iconChecked.className = 'fas fa-pen';
-        this.block.appendChild(iconChecked);
-        todoListBlock.innerHTML = text;
-        this.block.appendChild(todoListBlock);
+//render editor icon
+        let iconEditor = document.createElement('i');
+        iconEditor.className = 'fas fa-pen';
+        taskContainer.appendChild(iconEditor);
+
+//add input value to the task
+        todoListBlock.innerHTML = inputText;
+        taskContainer.appendChild(todoListBlock);
         this.input.value = '';
 
-
+//remove task
         iconDelete.addEventListener('click', () => {
             todoListBlock.remove();
             iconDelete.remove();
-            iconChecked.remove();
+            iconEditor.remove();
         });
-        iconChecked.addEventListener('click', () => {
-            iconChecked.style.display='none';
-            const todoListEditor = document.createElement('input');
+
+
+        iconEditor.addEventListener('click', () => {
+            iconEditor.style.display = 'none';
+            let todoListEditor = document.createElement('input');
             todoListEditor.className = 'todoListEditor';
-
-
-
-            todoListEditor.value = text;
+//add text from task to editor
+            todoListEditor.value = inputText;
             todoListBlock.appendChild(todoListEditor);
-
-            const todoListDone = document.createElement('button');
+//render done button in task-editor
+            let todoListDone = document.createElement('button');
             todoListDone.className = 'todoListDone';
             todoListDone.innerHTML = 'Done'
             todoListBlock.appendChild(todoListDone);
-
+//save change from task-editor and add it to the task; show editor button;
             todoListDone.addEventListener('click', () => {
                 todoListBlock.innerHTML = todoListEditor.value;
-                iconChecked.style.display='inline';
+                iconEditor.style.display = 'inline';
             })
-
-
         });
     }
 
-
-
-
-    // todoListBlock.addEventListener('click', () => {
-    //     text.style.background ='red';
-    // });
-
-    //
-    // function chekers () {
-    //     if (this.todoListBlock.className = 'todoListBlock') {
-
-    // }
-    // else  {
-    //         this.todoListBlock.addEventListener('click', ()=> {
-    //             this.todoListBlock.className = 'todoListBlock';
-    //         })
-    //     }
-    // }
-    // chekers();
-
-
-
-
-
-    if ( text !== '' ) {
+    if (inputText !== '') {
         todoPush();
     }
-    console.log(arr);
+    // console.log(arr);
 }
 
 document.getElementById('submit').addEventListener('click', todoAdd);
 
+//checked enter button on keyboard
 function test(e) {
     if (e.keyCode === 13) {
         todoAdd();

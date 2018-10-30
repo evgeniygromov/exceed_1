@@ -15,7 +15,6 @@ html, body {
 
 main {
     width: 100%;
-    /*height: 400px;*/
 }
 
 h1 {
@@ -26,13 +25,11 @@ h1 {
 
 .todoListBlock {
     display: block;
-    /*margin: 0 auto;*/
     justify-content: center;
     font-size: 2.6em;
     font-family: "Open Sans Condensed";
     margin-right: 50px;
     margin-left: 50px;
-    /*border: 1px solid gray;*/
     padding: 30px;
     background-color: #c7fcec;
     border-radius: 10px;
@@ -42,12 +39,10 @@ h1 {
 
 .todoListBlockChecked {
     display: block;
-    /*margin: 0 auto;*/
     font-size: 2.6em;
     font-family: "Open Sans Condensed";
     margin-right: 50px;
     margin-left: 50px;
-    /*border: 1px solid gray;*/
     text-decoration: line-through;
     padding: 30px;
     background-color: #c7fcec;
@@ -77,24 +72,9 @@ h1 {
     height: 50px;
     width: 500px;
     background-color: aquamarine;
-    /*border: 1px solid black;*/
     border-radius: 5px;
     box-shadow: 0.1em 0.1em 2px rgba(122, 122, 122, 0.5);
 }
-
-
-.todo2 {
-    display: flex;
-    justify-content: center;
-    height: 50px;
-    width: 520px;
-    /*background-color: blue;*/
-    z-index: 1;
-    /*border: 1px solid black;*/
-    border-radius: 5px;
-    box-shadow: 0.1em 0.1em 2px rgba(122, 122, 122, 0.5);
-}
-
 
 #input {
     width: 380px;
@@ -110,19 +90,16 @@ h1 {
     outline: none !important;
 }
 
-#block {
+#taskcontainer {
     display: block;
     flex-wrap: wrap;
-    /*margin-top: 20px;*/
     margin-right: 10%;
     margin-left: 10%;
     padding-top: -100px !important;
 
 }
 
-
 .fa-pen {
-    /*display: block;*/
     font-size: 1.6em;
     color: #888888;
     margin-top: 0;
@@ -137,7 +114,6 @@ h1 {
 }
 
 .fa-trash {
-    /*display: ;*/
     font-size: 1.6em;
     color: #888888;
     margin-left: 50px;
@@ -163,44 +139,29 @@ h1 {
     opacity: 0.8;
 }
 
-
-
 .todoListContainer {
     display: flex;
-    /*justify-content: center;*/
     align-items: center;
     height: 100%;
     width: 100%;
     opacity: 1;
     border: 1px solid black;
-    /*background-color: red;*/
-    /*padding-bottom: 200px;*/
 }
 
 .todoListEditor {
-    /*z-index: 1;*/
     display: block;
     position: relative;
-    /*top:0;*/
-    /*margin-top: 10px;*/
-    /*min-height: 100px;*/
     margin: 20px auto;
-    /*height: 50px;*/
-    /*padding: 30px;*/
     width: 80%;
     padding: 10px;
-    /*margin-left: -10px !important;*/
-    /*margin-right: -25px !important;*/
     background-color: white;
     font-size: 0.6em;
     font-family: "Open Sans Condensed";
     border: 1px solid #cbcbcb;
     border-radius: 5px;
     box-shadow: 0.1em 0.1em 2px rgba(122, 122, 122, 0.5);
-    /*border: 0;*/
 
 }
-
 
 .todoListDone {
     display: block;
@@ -213,6 +174,7 @@ h1 {
     border: 0;
     box-shadow: 0.1em 0.1em 2px rgba(122, 122, 122, 0.5);
     transition-duration: 1s;
+    text-decoration: none !important;
 }
 
 .todoListDone:hover {
