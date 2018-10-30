@@ -5,22 +5,24 @@ const input = document.getElementById('input');
 const block = document.getElementById('block');
 
 function todoAdd() {
-    const text = input.value;
+    let text = input.value;
 
     function todoPush() {
         arr.push(text);
         const todoListBlock = document.createElement('div');
         todoListBlock.className = 'todoListBlock';
 
-        todoListBlock.addEventListener('click', () => {
-            this.todoListBlock.className = 'todoListBlockChecked';
-        })
+//checked task
+        // todoListBlock.addEventListener('click', () => {
+        //     todoListBlock.className = 'todoListBlockChecked';
+        // })
+
         let iconDelete = document.createElement('i');
         iconDelete.className = 'fas fa-trash';
         this.block.appendChild(iconDelete);
 
         let iconChecked = document.createElement('i');
-        iconChecked.className = 'fas fa-calendar-check';
+        iconChecked.className = 'fas fa-pen';
         this.block.appendChild(iconChecked);
         todoListBlock.innerHTML = text;
         this.block.appendChild(todoListBlock);
@@ -33,25 +35,26 @@ function todoAdd() {
             iconChecked.remove();
         });
         iconChecked.addEventListener('click', () => {
-            // const todoListInput = document.createElement('div');
-            // todoListInput.className = 'todoListInput';
-            // block.appendChild(todoListInput);
-            //
-            // const todoListContainer = document.createElement('div');
-            // todoListContainer.className = 'todoListContainer';
-            // todoListBlock.appendChild(todoListContainer);
             iconChecked.style.display='none';
             const todoListEditor = document.createElement('input');
             todoListEditor.className = 'todoListEditor';
 
-            // todoListEditor.setAttribute('readonly');
+
+
             todoListEditor.value = text;
             todoListBlock.appendChild(todoListEditor);
-            dicument.body.style.backgroundColor='gray';
 
-            // todoListBlock.remove();
-            // iconDelete.remove();
-            // iconChecked.remove();
+            const todoListDone = document.createElement('button');
+            todoListDone.className = 'todoListDone';
+            todoListDone.innerHTML = 'Done'
+            todoListBlock.appendChild(todoListDone);
+
+            todoListDone.addEventListener('click', () => {
+                todoListBlock.innerHTML = todoListEditor.value;
+                iconChecked.style.display='inline';
+            })
+
+
         });
     }
 

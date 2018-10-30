@@ -75,7 +75,7 @@ h1 {
     display: flex;
     justify-content: center;
     height: 50px;
-    width: 520px;
+    width: 500px;
     background-color: aquamarine;
     /*border: 1px solid black;*/
     border-radius: 5px;
@@ -88,7 +88,7 @@ h1 {
     justify-content: center;
     height: 50px;
     width: 520px;
-    background-color: blue;
+    /*background-color: blue;*/
     z-index: 1;
     /*border: 1px solid black;*/
     border-radius: 5px;
@@ -121,21 +121,23 @@ h1 {
 }
 
 
-.fa-calendar-check {
+.fa-pen {
+    /*display: block;*/
     font-size: 1.6em;
     color: #888888;
-    margin-top: 50px;
+    margin-top: 0;
     margin-left: 10px;
     padding: 10px 10px 10px 0;
     transition-duration: 1s;
 
 }
 
-.fa-calendar-check:hover {
+.fa-pen:hover {
     color: #00fa9a
 }
 
 .fa-trash {
+    /*display: ;*/
     font-size: 1.6em;
     color: #888888;
     margin-left: 50px;
@@ -197,4 +199,23 @@ h1 {
     box-shadow: 0.1em 0.1em 2px rgba(122, 122, 122, 0.5);
     /*border: 0;*/
 
+}
+
+
+.todoListDone {
+    display: block;
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    font-size: 0.6em;
+    font-family: "Open Sans Condensed";
+    border-radius: 5px;
+    border: 0;
+    box-shadow: 0.1em 0.1em 2px rgba(122, 122, 122, 0.5);
+    transition-duration: 1s;
+}
+
+.todoListDone:hover {
+
+    background-color: #888888;
 }
