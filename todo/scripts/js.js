@@ -1,31 +1,28 @@
 "use script";
 
 const arr = [];
-const div = document.getElementById("block");
+const input = document.getElementById('input');
 
-function todoadd (event) {
-    event.preventDefault();
-    let text = document.getElementById("input").value;
+function todoadd () {
+    const text = input.value;
     function todoPush() {
         arr.push(text);
-        let h2 = document.createElement('h2');
+        const h2 = document.createElement('h2');
         h2.innerHTML = text;
         document.getElementById('block').appendChild(h2);
-        document.getElementById("input").value = "";
+        document.getElementById('input').value = '';
         console.log(arr);
     }
-    if ((text !== "")&&(text.length>4)) {
+    if ( text !== '' ) {
      todoPush();
     }
 }
 
-document.getElementById("submit").addEventListener("click", todoadd);
+document.getElementById('submit').addEventListener('click', todoadd);
 
 
 function test(e){
-    code = (window.event) ? window.event.keyCode : e.which;
-    if(code === 13){
-        alert('Enter нажат! ');
-        todoadd ();
+    if(e.keyCode === 13){
+        todoadd();
     }
 }
