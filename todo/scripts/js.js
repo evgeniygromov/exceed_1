@@ -1,6 +1,5 @@
 "use script";
 
-// const arr = [];
 const input = document.getElementById('input');
 const taskContainer = document.getElementById('taskcontainer');
 
@@ -8,15 +7,8 @@ function todoAdd() {
     let inputText = input.value;
 
     function todoPush() {
-        // arr.push(inputText);
         const todoListBlock = document.createElement('div');
         todoListBlock.className = 'todoListBlock';
-
-        // checked task
-        //         todoListBlock.addEventListener('click', () => {
-        //             todoListBlock.className = 'todoListBlockChecked';
-        //             todoListDone.style.textDecoration='none';
-        //         })
 
 //render delete icon
         let iconDelete = document.createElement('i');
@@ -69,8 +61,8 @@ function todoAdd() {
 
 document.getElementById('submit').addEventListener('click', todoAdd);
 
-//checked enter button on keyboard
-function test(e) {
+//check enter button on keyboard
+function checkKeys(e) {
     if (e.keyCode === 13) {
         todoAdd();
     }
