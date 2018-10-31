@@ -4,7 +4,7 @@ html, body {
     height: 100%;
 }
 
-.maincontainer {
+.mainContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,7 +76,7 @@ h1 {
     box-shadow: 0.1em 0.1em 2px rgba(122, 122, 122, 0.5);
 }
 
-#input {
+#inputTask {
     width: 380px;
     outline: none;
     padding: 10px;
@@ -90,7 +90,7 @@ h1 {
     outline: none !important;
 }
 
-#taskcontainer {
+#taskContainer {
     display: block;
     flex-wrap: wrap;
     margin-right: 10%;

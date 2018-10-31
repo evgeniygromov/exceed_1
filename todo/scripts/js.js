@@ -1,16 +1,14 @@
 "use script";
 
-const input = document.getElementById('input');
-const taskContainer = document.getElementById('taskcontainer');
+const inputTask = document.getElementById('inputTask');
+const taskContainer = document.getElementById('taskContainer');
 
 function todoAdd() {
-    let inputText = input.value;
+    let inputText = inputTask.value;
 
     function todoPush() {
         const todoListBlock = document.createElement('div');
         todoListBlock.className = 'todoListBlock';
-
-//render delete icon
         let iconDelete = document.createElement('i');
         iconDelete.className = 'fas fa-trash';
         taskContainer.appendChild(iconDelete);
@@ -23,7 +21,7 @@ function todoAdd() {
 //add input value to the task
         todoListBlock.innerHTML = inputText;
         taskContainer.appendChild(todoListBlock);
-        this.input.value = '';
+        this.inputTask.value = '';
 
 //remove task
         iconDelete.addEventListener('click', () => {
@@ -31,8 +29,7 @@ function todoAdd() {
             iconDelete.remove();
             iconEditor.remove();
         });
-
-
+//render editor form and remove editor icon
         iconEditor.addEventListener('click', () => {
             iconEditor.style.display = 'none';
             let todoListEditor = document.createElement('input');
